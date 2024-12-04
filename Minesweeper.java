@@ -40,13 +40,13 @@ public class Minesweeper {
     boolean gameOver = false;
 
     Minesweeper() {
-        frame.setSize(boardWidth, boardHeight + 100); // Increased height to accommodate mode panel
+        frame.setSize(boardWidth, boardHeight + 100); 
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
     
-        // Top Panel (Label)
+       
         textLabel.setFont(new Font("Arial", Font.BOLD, 25));
         textLabel.setHorizontalAlignment(JLabel.CENTER);
         textLabel.setText("Minesweeper: " + mineCount);
@@ -55,23 +55,22 @@ public class Minesweeper {
         textPanel.add(textLabel, BorderLayout.CENTER);
         frame.add(textPanel, BorderLayout.NORTH);
     
-        // Game Board
+        
         boardPanel.setLayout(new GridLayout(numRows, numCols));
         frame.add(boardPanel, BorderLayout.CENTER);
     
-        // Mode Selection Panel
+       
         modePanel.setLayout(new FlowLayout());
         modePanel.add(easyButton);
         modePanel.add(mediumButton);
         modePanel.add(hardButton);
         frame.add(modePanel, BorderLayout.SOUTH);
     
-        // Action Listeners for Mode Buttons
+      
         easyButton.addActionListener(e -> setMode(5)); 
         mediumButton.addActionListener(e -> setMode(10)); 
         hardButton.addActionListener(e -> setMode(20)); 
-    
-        // Initialize Game
+   
         initializeBoard();
         frame.setVisible(true);
         setMines();
